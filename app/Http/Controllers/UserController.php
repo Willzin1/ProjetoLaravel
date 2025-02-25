@@ -14,10 +14,6 @@ class UserController extends Controller
         $this->user = new User;
     }
 
-    public function login() {
-        return view('login_user');
-    }
-
     /**
      * Display a listing of the resource.
      */
@@ -39,6 +35,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'lastName' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email|max:255',
+            'password' => 'required|min:5|max:20|confirmed',
+        ], [
+            'name.required' => 'Campo nome é obrigatório',
+            'lastName.required' => 'Campo last name é obrigatório',
+            'email.required' => 'Campo e-mail é obrigatório',
+            'email.email' => 'Digite um e-mail válido.',
+            'email.unique' => 'E-mail já cadastrado.',
+            'password.required' => 'Senha é obrigatória.',
+            'password.min' => 'Senha deve conter no mínimo :min caracteres',
+            'password.max' => 'Senha deve conter no máximo :max caracteres',
+            'password.confirmed' => 'As senhas não coincidem.'
+        ]);
+
         $created = $this->user->create([
             'name' => $request->input('name'),
             'lastName' => $request->input('lastName'),
