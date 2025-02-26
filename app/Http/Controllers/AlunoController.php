@@ -37,13 +37,23 @@ class AlunoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'lastName' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'birthDate' => 'required',
-            'weight' => 'required',
-            'height' => 'required'
+            'name' => 'required|string|max:255',
+            'lastName' => 'required|string',
+            'email' => 'required|email|unique:alunos,email|max:255',
+            'phone' => 'required|string|max:255',
+            'birthDate' => 'required|date',
+            'weight' => 'required|string',
+            'height' => 'required|string'
+        ], [
+            'name.required' => 'Nome é obrigatório.',
+            'lastName' => 'Sobrenome é obrigatório.',
+            'email.required' => 'E-mail é obrigatório.',
+            'email.email' => 'Informe um e-mail válido.',
+            'email.unique' => 'E-mail já cadastrado.',
+            'phone.required' => 'Telefone é obrigatório.',
+            'birthDate.required' => 'Data de nascimento é obrigatório.',
+            'weight.required' => 'Peso é obrigatório.',
+            'height.required' => 'Altura é obrigatória.'
         ]);
 
         $created = $this->aluno->create([
@@ -92,11 +102,19 @@ class AlunoController extends Controller
         $request->validate([
             'name' => 'required',
             'lastName' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'phone' => 'required',
             'birthDate' => 'required',
             'weight' => 'required',
             'height' => 'required'
+        ], [
+            'name.required' => 'O campo nome é obrigatório.',
+            'lastName.required' => 'O campo sobrenome é obrigatório.',
+            'email.required' => 'O campo e-mail é obrigatório.',
+            'email.email' => 'Insira um e-mail válido.',
+            'phone.required' => 'O campo telefone é obrigatório.',
+            'weight.required' => 'O campo peso é obrigatório.',
+            'height.required' => 'O campo altura é obrigatório.'
         ]);
 
         $updated = $this->aluno->where('id', $id)->update($request->except('_token', '_method'));

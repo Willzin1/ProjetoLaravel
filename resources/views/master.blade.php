@@ -24,7 +24,7 @@
                             <li><a class="dropdown-item" href="{{ route('alunos.create') }}">Cadastrar Aluno</a></li>
                             <li><a class="dropdown-item" href="{{ route('professor.create') }}">Cadastrar Professor</a></li>
                             <li><a class="dropdown-item" href="#">Cadastrar Matéria</a></li>
-                            <li><hr></li>
+                            <li><div class="dropdown-divider"></div></li>
                             <li><a class="dropdown-item" href="{{ route('alunos.index') }}">Ver Alunos</a></li>
                         </ul>
                     </li>

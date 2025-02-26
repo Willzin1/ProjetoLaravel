@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name', 255);
             $table->string('lastName', 255);
-            $table->string('email', 255);
+            $table->string('email', 255)->unique();
             $table->string('phone', 255);
             $table->date('birthDate');
-            $table->float('weight');
-            $table->float('height');
+            $table->string('weight');
+            $table->string('height');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('alunos');
+        Schema::dropIfExists('table_alunos');
     }
 };

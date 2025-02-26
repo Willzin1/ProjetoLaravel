@@ -37,13 +37,13 @@
             @enderror
         </div>
         <div class="mb-3">
-            <input type="number" name="weight" class="form-control" value="{{ $aluno->weight }}">
+            <input type="text" name="weight" class="form-control" value="{{ $aluno->weight }}">
             @error('weight')
                 <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         <div class="mb-3">
-            <input type="number" name="height" class="form-control" value="{{ $aluno->height }}">
+            <input type="text" name="height" class="form-control" value="{{ $aluno->height }}">
             @error('height')
                 <p class="text-danger">{{ $message }}</p>
             @enderror
