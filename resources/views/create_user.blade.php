@@ -7,18 +7,18 @@
 
     <div class="col-lg-4 my-2">
     @if(session()->has('message'))
-        <p class="text-center">{{ session()->get('message') }}</p>
+        <p class="text-center text-success">{{ session()->get('message') }}</p>
     @endif
         <form class="form-cadastro mt-1" action="{{ route('users.store') }}" method="post">
             @csrf
             <div class="mb-3">
-                <input type="text" name="name" class="form-control" placeholder="Name">
+                <input type="text" name="name" class="form-control" placeholder="Nome">
                 @error('name')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-3">
-                <input type="text" name="lastName" class="form-control" placeholder="Last name">
+                <input type="text" name="lastName" class="form-control" placeholder="Sobrenome">
                 @error('lastName')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -30,13 +30,13 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <input type="password" name="password" class="form-control" placeholder="Password">
+                <input type="password" name="password" class="form-control" placeholder="Senha">
                 @error('password')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-3">
-                <input type="password" name="password_confirmation" class="form-control" placeholder="Password">
+                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmar senha">
                 @error('password')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror

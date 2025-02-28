@@ -6,7 +6,7 @@
     <p class="text-center mt-1">Preencha os campos abaixo para entrar.</p>
 
     @error('error')
-        <p class="text-danger text-center">{{ $message }}</p>
+        <p class="text-center text-danger">{{ $message }}</p>
     @enderror
 
     <div class="col-lg-4 my-2">
@@ -19,7 +19,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <input type="password" name="password" class="form-control" placeholder="Password">
+                <input type="password" name="password" class="form-control" placeholder="Senha">
                 @error('password')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror

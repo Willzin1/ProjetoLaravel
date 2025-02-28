@@ -15,13 +15,13 @@
         <form class="form-cadastro mt-1" action="{{ route('alunos.store') }}" method="post">
             @csrf
             <div class="mb-3">
-                <input type="text" name="name" class="form-control" placeholder="Name">
+                <input type="text" name="name" class="form-control" placeholder="Nome">
                 @error('name')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-3">
-                <input type="text" name="lastName" class="form-control" placeholder="Last name">
+                <input type="text" name="lastName" class="form-control" placeholder="Sobrenome">
                 @error('lastName')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -33,7 +33,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <input type="tel" name="phone" class="form-control" placeholder="(11) 94792-3268">
+                <input type="tel" name="phone" class="form-control" placeholder="Telefone (00) 00000-0000">
                 @error('phone')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
