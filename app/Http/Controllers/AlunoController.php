@@ -20,7 +20,7 @@ class AlunoController extends Controller
     {
         $alunos = $this->aluno->all();
 
-        return view('index_alunos', ['alunos' => $alunos]);
+        return view('alunos.index_alunos', ['alunos' => $alunos]);
     }
 
     /**
@@ -28,7 +28,7 @@ class AlunoController extends Controller
      */
     public function create()
     {
-        return view('create_aluno');
+        return view('alunos.create_aluno');
     }
 
     /**
@@ -69,11 +69,10 @@ class AlunoController extends Controller
         ]);
 
         if($created) {
-
-            return redirect()->route('alunos.index');
+            return redirect()->route('alunos.index')->with('message', 'Aluno cadastrado com sucesso.');
         }
 
-        return redirect()->back()->with('mensagem', 'Something went wrong.');
+        return redirect()->back()->with('message', 'Something went wrong.');
     }
 
     /**
@@ -82,7 +81,7 @@ class AlunoController extends Controller
     public function show(string $id)
     {
         $aluno = $this->aluno->find($id);
-        return view('show_aluno', ['aluno' => $aluno]);
+        return view('alunos.show_aluno', ['aluno' => $aluno]);
     }
 
     /**
@@ -91,7 +90,7 @@ class AlunoController extends Controller
     public function edit(string $id)
     {
         $aluno = $this->aluno->find($id);
-        return view('edit_aluno', ['aluno' => $aluno]);
+        return view('alunos.edit_aluno', ['aluno' => $aluno]);
     }
 
     /**

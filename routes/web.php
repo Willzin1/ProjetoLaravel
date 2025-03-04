@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\CursoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfessorController;
@@ -31,6 +32,17 @@ Route::controller(AlunoController::class)->group(function() {
 });
 
 Route::controller(ProfessorController::class)->group(function() {
-    Route::get('/professor', 'create')->name('professor.create');
-    Route::post('/professor', 'store')->name('professor.store');
+    Route::get('/professores', 'index')->name('professores.index');
+    Route::get('/professores/create', 'create')->name('professores.create');
+    Route::post('/professores', 'store')->name('professores.store');
+    Route::get('/professores/{professor}/edit', 'edit')->name('professores.edit');
+    Route::get('/professores/{professor}', 'show')->name('professores.show');
+    Route::put('/professores/{professor}', 'update')->name('professores.update');
+    Route::delete('/professores/{professor}', 'destroy')->name('professores.destroy');
+});
+
+Route::controller(CursoController::class)->group(function() {
+    Route::get('cursos', 'index')->name('cursos.index');
+    Route::get('/cursos/create', 'create')->name('cursos.create');
+    Route::post('/cursos', 'store')->name('cursos.store');
 });
