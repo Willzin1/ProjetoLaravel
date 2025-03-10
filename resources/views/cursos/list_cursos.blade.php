@@ -23,6 +23,8 @@
                     <tr>
                         <td>{{ $curso->name }}</td>
                         <td>{{ $curso->duracao }}</td>
+                        <td class=""><a href="{{ route('cursos.edit', ['curso' => $curso->id]) }}" class="btn btn-sm btn-warning">✏️ Editar curso</a></td>
+                        <td class=""><a href="{{ route('cursos.show', ['curso' => $curso->id]) }}" class="btn btn-sm btn-primary">🔍 Mostrar detalhes</a></td>
                     </tr>
                     @endforeach
                 </tbody>
