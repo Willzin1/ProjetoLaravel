@@ -24,8 +24,9 @@
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-between">
                 <button type="submit" class="btn btn-primary">Cadastrar curso</button>
+                <a href="{{ url()->previous() }}" class="btn btn-secondary ">⬅️ Voltar</a>
             </div>
         </form>
     </div>

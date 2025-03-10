@@ -38,7 +38,7 @@
                 </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{ route('login.index') }}"><button class="btn btn-success">Entrar</button></a>
+                        <a class="nav-link" aria-current="page" href="{{ route('login') }}"><button class="btn btn-success">Entrar</button></a>
                     </li>
                 @endif
             </ul>

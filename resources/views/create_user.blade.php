@@ -7,7 +7,7 @@
 
     <div class="col-lg-4 my-2">
     @if(session()->has('message'))
-        <p class="text-center text-success">{{ session()->get('message') }}</p>
+        <p class="alert alert-success text-center w-50 mx-auto mt-4">{{ session()->get('message') }}</p>
     @endif
         <form class="form-cadastro mt-1" action="{{ route('users.store') }}" method="post">
             @csrf
@@ -46,7 +46,7 @@
             </div>
         </form>
 
-        <p class="text-center mt-2">Já possui uma conta? Faça <a href="{{ route('login.index') }}">Login</a></p>
+        <p class="text-center mt-2">Já possui uma conta? Faça <a href="{{ route('login') }}">Login</a></p>
     </div>
 </div>
 

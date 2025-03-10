@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="row justify-content-center">
+    @if(session()->has('message'))
+        <p class="alert alert-danger text-center w-50 mx-auto mt-3">{{ session()->get('message') }}</p>
+    @endif
     <h2 class="text-center mt-3">Entre</h2>
     <p class="text-center mt-1">Preencha os campos abaixo para entrar.</p>
 

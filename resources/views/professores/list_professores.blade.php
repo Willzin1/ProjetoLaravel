@@ -27,7 +27,8 @@
                         <td>{{ $professor->lastName }}</td>
                         <td>{{ $professor->email }}</td>
                         <td>{{ $professor->phone }}</td>
-                        <td><a href="{{ route('professores.show', ['professor' => $professor->id]) }}" class="btn btn-sm btn-warning">🔍 Mostrar detalhes</a></td>
+                        <td><a href="{{ route('professores.edit', ['professor' => $professor->id]) }}" class="btn btn-sm btn-warning">✏️ Editar professor</a></td>
+                        <td><a href="{{ route('professores.show', ['professor' => $professor->id]) }}" class="btn btn-sm btn-primary">🔍 Mostrar detalhes</a></td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -8,7 +8,7 @@
             Com ele, é possível cadastrar alunos e professores, criar disciplinas e realizar a matrícula de alunos em matérias específicas.
         </p>
         <p class="text-justify">
-            Faça <a href="{{ route('login.index') }}" class="text-muted">Login</a> ou
+            Faça <a href="{{ route('login') }}" class="text-muted">Login</a> ou
             <a href="{{ route('users.create') }}" class="text-muted">Cadastre-se</a> para acessar todas as funcionalidades do sistema.
         </p>
     @else
